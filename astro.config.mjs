@@ -1,5 +1,21 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+
+import react from '@astrojs/react';
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  server: {
+      host: '0.0.0.0'
+  },
+
+  vite: {
+      plugins: [tailwindcss()],
+      server: {
+          allowedHosts: true
+      }
+  },
+
+  integrations: [react()]
+});
