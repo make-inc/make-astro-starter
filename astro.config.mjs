@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import { visualEditorPlugin } from 'makelabs/vite'
+
 
 import react from '@astrojs/react';
 
@@ -12,7 +14,7 @@ export default defineConfig({
     },
 
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [tailwindcss(), visualEditorPlugin()],
         server: {
             allowedHosts: true
         }
